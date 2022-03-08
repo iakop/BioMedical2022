@@ -13,6 +13,14 @@ Repository for the Arduino Workshop for BioMedical Design in March 2022
 
 ### Part 1: Arduino Basics
 
-| <img src="/Part-1_Arduino-Basics/Example-1_Make-an-LED-Blink/Example-1_Make-an-LED-Blink_bb.png" alt="Example 1: Make an LED Blink"> | <b>Example 1:</b> Make an LED Blink</br>[Source code](https://raw.githubusercontent.com/iakop/BioMedical2022/main/Part-1_Arduino-Basics/Example-1_Make-an-LED-Blink/Example-1_Make-an-LED-Blink.ino) |
-|-|-|
-| <img src="/Part-1_Arduino-Basics/Example-2_Toggle-LED-With-a-Button/Example-2_Toggle-LED-With-a-Button_bb.png" alt="Example 2: Toggle LED With a Button"> | <b>Example 2:</b> Toggle LED With a Button</br>[Source code](https://raw.githubusercontent.com/iakop/BioMedical2022/main/Part-1_Arduino-Basics/Example-1_Make-an-LED-Blink/Example-1_Make-an-LED-Blink.ino) |
+|-|
+| <img src="/Part-1_Arduino-Basics/Example-1_Make-an-LED-Blink/Example-1_Make-an-LED-Blink_bb.png" alt="Example 1: Make an LED Blink" width="400px"> |
+| <b>Example 1:</b> Make an LED Blink</br>[Source code](https://raw.githubusercontent.com/iakop/BioMedical2022/main/Part-1_Arduino-Basics/Example-1_Make-an-LED-Blink/Example-1_Make-an-LED-Blink.ino) |
+
+|-|
+| <img src="/Part-1_Arduino-Basics/Example-2_Toggle-LED-With-a-Button/Example-2_Toggle-LED-With-a-Button_bb.png" alt="Example 2: Toggle LED With a Button" width="400px"> |
+| <b>Example 2:</b> Toggle LED With a Button</br>[Source code](https://raw.githubusercontent.com/iakop/BioMedical2022/main/Part-1_Arduino-Basics/Example-2_Toggle-LED-With-a-Button/Example-2_Toggle-LED-With-a-Button.ino) |
+
+|-|
+| <img src="/Part-1_Arduino-Basics/Example-3_Analog-Values-From-a-Potentiometer/Example-3_Analog-Values-From-a-Potentiometer_bb.png" alt="Example 3: Analog Values From a Potentiometer" width="400px"> |
+| <b>Example 3:</b> Analog Values From a Potentiometer</br>[Source code](https://raw.githubusercontent.com/iakop/BioMedical2022/main/Part-1_Arduino-Basics/Example-3_Analog-Values-From-a-Potentiometer/Example-3_Analog-Values-From-a-Potentiometer.ino) |
