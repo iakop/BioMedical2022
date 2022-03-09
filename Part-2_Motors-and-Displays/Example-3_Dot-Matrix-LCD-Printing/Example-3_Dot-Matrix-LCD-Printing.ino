@@ -1,20 +1,23 @@
-#include <LiquidCrystal.h> // Vi indlæser LiquidCrystal biblioteket.
+#include <LiquidCrystal.h> // Include the built-in LiquidCrystal.h library
+#include <Bounce2.h> // To debounce button presses
 
+// Pin defines
 #define RS 3
 #define E 4
 #define D4 5
 #define D5 6
 #define D6 7
 #define D7 8
-// RW til GND
-// VSS til GND
-// VDD til 5V
-// 10k potmeter mellem GND VO og VDD
-// A forbindes med en 220 ohms resistor til +5V og en K til GND.
+// RW -> GND
+// VSS -> GND
+// VDD -> 5V
+// 10k potentiometer between GND VO and VDD
+// A through 220ohm resistor to +5V
+// K -> GND
 
-#define BTN 2 // Knappen sidder på pin 2.
+#define BTN 2 // BTN is on pin 2
 
-//Vores Helt eget tegn:
+// We make a byte array. This becomes our custom character on the display:
 byte blinkey[8] =
 {
   B00000,
@@ -26,13 +29,14 @@ byte blinkey[8] =
   B00110
 };
 
-LiquidCrystal lcd(RS, E, D4, D5, D6, D7); // Vi constructer et objekt lcd af typen Liquid Crystal.
+LiquidCrystal lcd(RS, E, D4, D5, D6, D7); // We instantiate a LiquidCrystal object, lcd
+Bounce button = Bounce(); // We create a Bounce object
 
-unsigned int count = 0; // count er den tællerværdi vi vil skrive ud i sidste ende.
-long unsigned int wait = 0; // wait er en timervariabel, der hjælper os med at holde styr på ventetiden for knappen.
+unsigned int count = 0; // Count is how many times we pushed the button
 
 void setup() {
-  pinMode(BTN, INPUT); // BTN sættes op som input.
+  button.attach(BTN, INPUT); // The button's I/O pin is an input, for Bounce2 it's initialized through button.attach()
+  button.interval(50); // Set debounce interval
   
   lcd.createChar(0, blinkey); // createChar funktionen bruges til at sætte vores eget tegn op.
   
@@ -45,16 +49,16 @@ void setup() {
 }
 
 void loop() {
-  // Vi behøver kun ændre noget, hvis der trykkes på knappen:
-  if (digitalRead(BTN) == HIGH && wait <= (millis() - 100)) //Hvis knappen er høj, og ventetimeren er 100 ms efter systemtimeren.
-  {
-    wait = millis(); // Ventetimeren opdateres.
-    count++; // Count inkrementeres med 1.
+  
+  // Check for changes on button:
+  button.update();
+  buttonState = button.rose();
+
+  // We only need to update the display when button is pushed:
+  if(buttonState == true) { 
+    count++; // count is incremented by 1
     
-    lcd.setCursor(0, 1); // Sæt cursoren ned på den rigtige plads.
-    lcd.print(count); // Udskriv count.
-    
-    while(digitalRead(BTN) == HIGH); // TRICK! Programmet laver intet i en while-løkke der bare er while(cond);
-    delay(50); // Når knappen går ned fra HIGH igen, vent 50ms.
+    lcd.setCursor(0, 1); // We place the cursor
+    lcd.print(count); // print count
   }
 }

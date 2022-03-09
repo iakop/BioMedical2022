@@ -1,22 +1,22 @@
-#define LEDPIN 6 // Konstanten LEDPIN er sat til 6 for PWM.
+#define LEDPIN 6 // We #define, another way to set a constant value LEDPIN is 6 here
+#define LDRPIN A0 // LDRPIN is A0
 
-int ldrVal = 0; // En variabel integer sættes op til at holde LDR'ens værdi.
-int pwmOut = 0; // En variabel integer sættes op til at holde PWM output argumentet.
+int ldrVal = 0; // A variable integer is set up to hold the potentiometer value, initialized to 0
+int pwmOut = 0; // A variable integer is set up to hold the PWM output value
 
 void setup() {
-  pinMode(LEDPIN, OUTPUT); //ledPin sættes som output.
-  Serial.begin(9600); //Den serielle kommunikation mellem Arduino og Computer påbegyndes med en baudrate på 9600 baud (tegn/s)
+  pinMode(LEDPIN, OUTPUT); // LEDPIN is output
+  Serial.begin(9600); // We specify and begin serial communication (UART protocol) between Arduino and Computer at baudrate of 9600 baud (symbols/s)
 }
 
 void loop() {
-  ldrVal = analogRead(A0); // Der foretages en analoglæsning på A0.
-  Serial.print("ldrVal = "); // Værdien for aflæsningen skrives til det serielle vindue.
-  Serial.println(ldrVal); // Værdien for aflæsningen skrives til det serielle vindue.
+  ldrVal = analogRead(LDRPIN); // We perform an analogRead() on ANALOGIN, store it in ldrVal
+  Serial.print("ldrVal = "); // We print the name of ldrVal to UART
+  Serial.println(ldrVal); // Then we print the value of ldrVal to UART Serial.println() also changes to next line after
 
-  pwmOut = map(ldrVal,1023,344,0,255); // pwmOut får værdien fra ldrVal, Det mappes inverst, ud fra LDR'ens konfiguration. Så en høj spænding giver lidt lys.
-  analogWrite(LEDPIN, pwmOut); // LEDPIN genererer et PWM signel, der svarer til den dutycycle tallet fra 0-255 repræsenterer.
-  Serial.println(pwmOut); 
-  Serial.print("Dutycycle = "); // Dutycycle skal også leveres til Serial vinduet.
-  Serial.print((float)pwmOut/255.0*100.0); // Det beregnes som en normal procentomregning udfra 255 som maksværdien.
-  Serial.println("%"); // Et procenttegn på til sidst, for at gøre det pænt.
+  pwmOut = map(ldrVal,1023,344,0,255); // pwmOut gets the ldrVal, mapped inversely through map(), so a high voltage gives low light
+  analogWrite(LEDPIN, pwmOut); // LEDPIN generates a PWM signel, the dutycycle resolution (0-100%) is given by 0-255
+  Serial.print("Dutycycle = "); // Dutycycle is printed
+  Serial.print((float)pwmOut/255.0*100.0); // We calculate dutycycle as the value printed
+  Serial.println("%"); // And add a percentage sign and a linechange
 }
