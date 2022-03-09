@@ -1,19 +1,19 @@
-const int ledPin = 13; // Pin 13 har en debug LED forforbundet på boardet. ledPin sættes op til at holde "adressen".
+const int ledPin = 13; // Pin 13 has a debug LED, so we specify a constant variable to hold this value
 
 void setup() {
-  // Koden der skrives her, køres kun én gang!
+  // The code written inside setup()'s brackets is only run once:
 
-  pinMode(ledPin, OUTPUT); // LED'ens I/O pin sættes op som output. For hardwarens skyld.
+  pinMode(ledPin, OUTPUT); // The I/O pin (13, as specified by the ledPin variable) is set to the mode OUTPUT
 
 }
 
 void loop() {
-  // Koden der skrives her, gentages resten af tiden.
+  // The code written inside loop()'s brackets is run forever, looping at the end:
   
-  digitalWrite(ledPin, HIGH); // LED'ens I/O Pin Gøres Høj/1/Sand/Tændt
-  delay(1000);
-  digitalWrite(ledPin, LOW); // LED'ens I/O Pin Gøres Lav/0/Falsk/Slukket
-  delay(1000);
+  digitalWrite(ledPin, HIGH); // The ledPin I/O pin is set to HIGH/1/true (on)
+  delay(1000); // delay() waits for the amount of milliseconds, passed as argument
+  digitalWrite(ledPin, LOW); // The ledPin I/O pin is set to LOW/0/false (off)
+  delay(1000); // delay() waits for another 1000ms
   
-  // Herefter kører loopet igen.
+  // This is where the code loops
 }

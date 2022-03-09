@@ -20,6 +20,8 @@ Repository for the Arduino Workshop for BioMedical Design in March 2022
 | <img src="/Part-1_Arduino-Basics/Example-2_Toggle-LED-With-a-Button/Example-2_Toggle-LED-With-a-Button_bb.png" alt="Example 2: Toggle LED With a Button" width="400px"> |
 |-|
 | <b>Example 2:</b> Toggle LED With a Button</br>[Source code](https://raw.githubusercontent.com/iakop/BioMedical2022/main/Part-1_Arduino-Basics/Example-2_Toggle-LED-With-a-Button/Example-2_Toggle-LED-With-a-Button.ino) |
+| <b>Extra:</b> Poor Man's Toggle</br>[Source code](https://raw.githubusercontent.com/iakop/BioMedical2022/main/Part-1_Arduino-Basics/Example-2_Toggle-LED-With-a-Button/Extra/Poor-Mans-Toggle/Poor-Mans-Toggle.ino) |
+| <b>Extra:</b> Rich Man's Toggle</br>[Source code](https://raw.githubusercontent.com/iakop/BioMedical2022/main/Part-1_Arduino-Basics/Example-2_Toggle-LED-With-a-Button/Extra/Rich-Mans-Toggle/Rich-Mans-Toggle.ino) |
 
 | <img src="/Part-1_Arduino-Basics/Example-3_Analog-Values-From-a-Potentiometer/Example-3_Analog-Values-From-a-Potentiometer_bb.png" alt="Example 3: Analog Values From a Potentiometer" width="400px"> |
 |-|
