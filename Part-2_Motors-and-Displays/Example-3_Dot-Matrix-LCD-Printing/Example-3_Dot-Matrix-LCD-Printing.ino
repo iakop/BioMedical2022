@@ -16,6 +16,7 @@
 // K -> GND
 
 #define BTN 2 // BTN is on pin 2
+bool buttonState = false;
 
 // We make a byte array. This becomes our custom character on the display:
 byte blinkey[8] =
@@ -38,11 +39,11 @@ void setup() {
   button.attach(BTN, INPUT); // The button's I/O pin is an input, for Bounce2 it's initialized through button.attach()
   button.interval(50); // Set debounce interval
   
-  lcd.createChar(0, blinkey); // createChar funktionen bruges til at sætte vores eget tegn op.
+  lcd.createChar(0, blinkey); // createChar funktionen bruges til at sÃ¦tte vores eget tegn op.
   
-  lcd.begin(16, 2); // LCD'et opsættes med 2 linjer, 16 chars.
+  lcd.begin(16, 2); // LCD'et opsÃ¦ttes med 2 linjer, 16 chars.
   
-  lcd.setCursor(0 /*x*/ , 0 /*y*/); // Cursoren for displayet sættes på koordinaterne 0,0.
+  lcd.setCursor(0 /*x*/ , 0 /*y*/); // Cursoren for displayet sÃ¦ttes pÃ¥ koordinaterne 0,0.
   lcd.print("Hello world! "); // Vi udskriver Hello World.
   
   lcd.write(byte(0)); // Vi skriver vores eget tegn.
